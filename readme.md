@@ -1,6 +1,7 @@
 # Cereal API
 
 A simple API that gets data from a CSV file, it can also fetch the pictures within the pictures folder
+Makes use of flask for endpoint routes, this also helps demonstrate how we can use flask for making a microservice API.
 
 ## Table of Contents
 
