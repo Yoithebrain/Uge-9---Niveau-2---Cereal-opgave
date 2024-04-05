@@ -1,4 +1,4 @@
-# Project Name
+# Cereal API
 
 A simple API that gets data from a CSV file, it can also fetch the pictures within the pictures folder
 
