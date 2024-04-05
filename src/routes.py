@@ -1,9 +1,10 @@
 # routes are defined in this file
 
 # Imports
-from flask import jsonify, request, abort
+from flask import jsonify, request, abort, send_file
 import pandas as pd
 import csv
+import os
 
 # Function to read products from CSV file
 def read_products_from_csv(file_path):
@@ -122,3 +123,13 @@ def configure_routes(app):
             writer.writerows(rows)
 
         return jsonify({'message': 'Row deleted successfully'}), 200
+    # This works now aswell
+    @app.route('/cereal/<string:cereal_name>/picture', methods=['GET'])
+    def get_cereal_picture(cereal_name):
+        pictures_folder = 'C://Users//KOM//Documents//Uge 9 - Niveau 2 - Cereal opgave//Pictures'
+        picture_filename = f'{cereal_name.lower().replace(" ", "_")}.jpg'
+        picture_path = os.path.join(pictures_folder, picture_filename)
+        if os.path.exists(picture_path):
+            return send_file(picture_path, mimetype='image/jpeg')
+        else:
+            return jsonify({'error': 'Picture not found'}), 404
