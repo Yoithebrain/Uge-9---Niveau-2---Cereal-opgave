@@ -69,7 +69,9 @@ def configure_routes(app):
     
     @app.route('/data', methods=['GET'])
     def get_route():
-        return "Hello world"
+        file_path = 'C://Users//KOM//Documents//Uge 9 - Niveau 2 - Cereal opgave//Data//Cereal.csv'  # Adjust the file path accordingly
+        products = read_products_from_csv(file_path)
+        return jsonify(products), 200
 
     @app.route('/data', methods=['POST'])
     def post_route():
