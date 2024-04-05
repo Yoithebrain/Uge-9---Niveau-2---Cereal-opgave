@@ -1,0 +1,22 @@
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+
+# Ignore system and environment-specific files
+*.DS_Store
+*.env
+
+# Ignore logs and other temporary files
+*.log
+*.swp
+*.swo
+*.bak
+
+# Ignore virtual environment
+venv/
+
+# Ignore dependencies installed via pip
+# Add other package managers if necessary
+*.egg-info/
+dist/
+build/
